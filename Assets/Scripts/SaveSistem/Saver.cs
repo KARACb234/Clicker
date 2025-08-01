@@ -5,14 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assets.Scripts
+namespace SaveSystem
 {
     public class Saver
     {
+        public static Saver Instance { get; private set; }
         private readonly PlayerData playerData;
+        public PlayerData GetPlayerData => playerData;
         private readonly BaseController controller;
         public Saver(BaseController baseController) 
         {
+            Instance = this;
             playerData = baseController.LoadPlayer();
             controller = baseController;
         }
@@ -21,9 +24,9 @@ namespace Assets.Scripts
         {
             controller.SavePlayer(playerData);
         }
-        public void Load() 
+        public PlayerData Load() 
         {
-            controller.LoadPlayer();
+            return controller.LoadPlayer();
         }
 
         

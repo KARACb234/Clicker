@@ -1,22 +1,25 @@
 using Newtonsoft.Json;
 using System.IO;
 using System;
-using System.Diagnostics;
+using UnityEngine;
 namespace SaveSystem
 {
     public class SaveParametresToJson
     {
-        private const string filePath = "C:\\Users\\User\\Desktop\\Clicker\\PlayerData.json";
+        private const string fileName = "PlayerData.json";
         // Start is called before the first frame update
         public void Save(PlayerData persons)
         {
             string json = JsonConvert.SerializeObject(persons, Formatting.Indented);
+            string filePath = Path.Combine(Application.dataPath, fileName);
             File.WriteAllText(filePath, json);
             string time = DateTime.Now.ToString("HH:mm");
             UnityEngine.Debug.Log($"Автоматическое сохранение прошло в {time}");
         }
         public PlayerData Load()
         {
+            string filePath = Path.Combine(Application.dataPath, fileName);
+            Debug.Log(filePath);
             if (File.Exists(filePath))
             {
                 string jsonData = File.ReadAllText(filePath);
