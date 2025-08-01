@@ -1,5 +1,8 @@
+using Assets.Scripts;
 using SaveSystem;
 using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -11,14 +14,6 @@ public class GameManager : MonoBehaviour
     private Saver _saver;
     private void Awake()
     {
-        
-        WindowManager.Instance.Show<BackgroundWindow>();
-        /*
-        WindowManager.Instance.Show<MainMenuWindow>();
-        WindowManager.Instance.Show<ShopWindow>();
-        WindowManager.Instance.Show<BackgroundWindow>();
-        WindowManager.Instance.Hide<MainMenuWindow>();
-        */
         _baseController = new BaseController(this);
         _saver = new Saver(_baseController);
         StartCoroutine(SaveCicle());

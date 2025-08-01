@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class SettingsWindow : WindowBase
+public class SettingsWindow : MonoBehaviour
 {
-
-    public void OnCloseWindow()
+    // Start is called before the first frame update
+    void Start()
     {
-        WindowManager.Instance.Back();
+        
     }
-    public void OnOpenAboutMe()
+
+    // Update is called once per frame
+    void Update()
     {
-        WindowManager.Instance.Show<AboutMeWindow>();
-        Debug.Log("рек");
+        
     }
 }

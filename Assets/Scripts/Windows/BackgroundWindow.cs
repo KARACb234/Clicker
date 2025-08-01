@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class BackgroundWindow : WindowBase
 {
-    private void Start()
-    {
-        WindowManager.Instance.Show<MainMenuWindow>();
-    }
+
 }

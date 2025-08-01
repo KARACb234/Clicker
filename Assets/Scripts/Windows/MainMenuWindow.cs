@@ -2,26 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenuWindow : WindowBase
+public class MainMenuWindow : MonoBehaviour
 {
-    private ScoreManager _scoreManager;
-    private ScoreManager GetScoreManager => _scoreManager;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
-    private void Awake()
+    // Update is called once per frame
+    void Update()
     {
-        _scoreManager = GetComponent<ScoreManager>();
-    }
-    public void OnOpenShop()
-    {
-        WindowManager.Instance.Show<ShopWindow>();
-    }
-    public void OnOpenSettings()
-    {
-        WindowManager.Instance.Show<SettingsWindow>();
-    }
-    public void OnCloseGame()
-    {
-        Application.Quit();
-        Debug.Log("Выход из игры прошёл успешно");
+        
     }
 }

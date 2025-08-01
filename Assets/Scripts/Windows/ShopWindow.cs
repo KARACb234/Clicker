@@ -2,10 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopWindow : WindowBase
+public class ShopWindow : MonoBehaviour
 {
-    public void OnCloseWindow()
+    // Start is called before the first frame update
+    void Start()
     {
-        WindowManager.Instance.Back();
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -9,11 +9,7 @@ public class WindowBase : MonoBehaviour
     private const float SHOW_DURATION = 1;
     private void Awake()
     {
-    }
-    private void OnEnable()
-    {
         _canvasGroup = GetComponent<CanvasGroup>();
-        _canvasGroup.alpha = 0;
     }
     public virtual void Show()
     {
